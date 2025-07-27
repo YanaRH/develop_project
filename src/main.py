@@ -2,9 +2,30 @@ import json
 import logging
 from pathlib import Path
 
-from src.utils import currency_rates, for_each_card, get_price_stock, greetings, read_excel, top_five_transaction
-from src.views import filter_by_date
+# Заглушки для функций
+def currency_rates(currency):
+    return {}
 
+def for_each_card(transactions):
+    return []
+
+def get_price_stock(stocks):
+    return {}
+
+def greetings():
+    return "Добро пожаловать!"
+
+def read_excel(file_path):
+    return []  # Возвращаем пустой список как заглушку
+
+def top_five_transaction(transactions):
+    return []
+
+# Импортируем заглушку для filter_by_date
+def filter_by_date(date, transactions):
+    return transactions  # Возвращаем все транзакции как заглушку
+
+# Настройка логирования
 logger = logging.getLogger("utils.log")
 file_handler = logging.FileHandler("main.log", "w")
 file_formatter = logging.Formatter("%(asctime)s %(levelname)s: %(message)s")
@@ -12,10 +33,9 @@ file_handler.setFormatter(file_formatter)
 logger.addHandler(file_handler)
 logger.setLevel(logging.INFO)
 
-file_path = str(Path(__file__).resolve().parent.parent) + "\\data\\operations.xlsx"
+# Путь к файлу
+file_path = str(Path(__file__).resolve().parent.parent / "data" / "operations.xlsx")
 data_frame = read_excel(file_path)
-# data_frame = read_excel("../data/operations.xlsx")
-
 
 def main(date: str, df_transactions, stocks: list, currency: list):
     """Функция создающая JSON ответ для страницы главная"""
