@@ -1,6 +1,5 @@
 from pathlib import Path
-import csv as pd  # Импортируем pandas
-
+import pandas as pd  # Импортируем pandas
 from src.utils import fetch_data_from_file
 from src.views import filter_by_date
 

@@ -1,6 +1,6 @@
 import json
 import logging
-import csv as pd  # Импортируем pandas
+import pandas as pd  # Импортируем pandas
 
 from src.decorators import decorator_search
 

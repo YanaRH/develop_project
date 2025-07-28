@@ -1,6 +1,6 @@
 import json
 from pathlib import Path
-import csv as pd  # Импортируем pandas
+import pandas as pd  # Импортируем pandas
 
 from src.services import simple_search
 from src.utils import fetch_data_from_file  # Замена read_excel на fetch_data_from_file

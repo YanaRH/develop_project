@@ -4,7 +4,7 @@ import logging
 import os
 import urllib.request
 from typing import List, Dict, Any, Optional
-import csv  # Вместо pandas для чтения Excel
+import pandas  # Вместо pandas для чтения Excel
 from urllib.request import urlopen  # Вместо urllib3
 import configparser  # Вместо dotenv
 
@@ -37,7 +37,7 @@ def read_excel_data(file_path: str) -> List[Dict[str, Any]]:
     data = []
     try:
         with open(file_path, 'r', encoding='utf-8') as f:
-            reader = csv.DictReader(f)
+            reader = pandas.DictReader(f)
             for row in reader:
                 data.append(dict(row))
     except Exception as e:

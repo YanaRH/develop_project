@@ -2,7 +2,7 @@ import datetime
 import json
 import logging
 from typing import Any, Callable, Optional, Dict
-import csv as pd  # Импортируем pandas
+import pandas as pd  # Импортируем pandas
 
 from src.decorators import decorator_spending_by_category
 
